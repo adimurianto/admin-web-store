@@ -1,69 +1,64 @@
-# CodeIgniter 4 Application Starter
+# Admin Web Store 🛒
 
-## What is CodeIgniter?
+Aplikasi Manajemen Toko Berbasis Web (Admin Web Store). Aplikasi ini memungkinkan pengguna dengan peran Admin, Staf Gudang, dan Guest untuk mengelola data barang dan kategori dengan mudah dan interaktif.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 🚀 Cara Menjalankan Aplikasi (Panduan Pemula)
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Ikuti langkah-langkah mudah di bawah ini untuk menjalankan aplikasi di komputer Anda:
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### Tahap 1: Persiapan Server (XAMPP)
+1. Pastikan Anda sudah menginstal **XAMPP** di komputer Anda.
+2. Buka aplikasi **XAMPP Control Panel**.
+3. Klik tombol **Start** pada modul **MySQL** (dan **Apache** jika diperlukan) hingga statusnya berjalan (berwarna hijau).
 
-## Installation & updates
+### Tahap 2: Menyiapkan Database
+1. Buka browser (Chrome/Firefox/Safari) dan akses tautan ini: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+2. Di menu sebelah kiri, klik tulisan **New** (Baru) untuk membuat database.
+3. Masukkan nama database persis seperti ini: **`admin_web_store`**
+4. Klik tombol **Create** (Buat).
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+*(Catatan: Jika database `admin_web_store` sebelumnya sudah ada, Anda bisa melewati langkah ini).*
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### Tahap 3: Menyalakan Aplikasi
+Dikarenakan beberapa versi XAMPP masih menggunakan PHP versi lama, aplikasi ini dilengkapi cara paling praktis untuk dijalankan secara mandiri melalui Terminal:
+1. Buka **Terminal** (jika Anda menggunakan Mac/Linux) atau **Command Prompt / CMD** (jika menggunakan Windows).
+2. Arahkan direktori terminal ke folder penyimpanan aplikasi ini. *(Berdasarkan lokasi saat ini: `cd /Applications/XAMPP/xamppfiles/htdocs/admin-web-store`)*
+3. Ketik perintah berikut, lalu tekan **Enter**:
+   ```bash
+   php spark serve --port 8080
+   ```
+4. Jika muncul tulisan *Development Server started*, **biarkan jendela terminal tersebut terbuka** di latar belakang.
 
-## Setup
+### Tahap 4: Membuka Aplikasi
+1. Buka kembali browser web Anda (Chrome/Safari/dll).
+2. Kunjungi alamat berikut: 
+   👉 **[http://localhost:8080](http://localhost:8080)**
+3. Anda akan melihat halaman Login aplikasi Admin Web Store!
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+---
 
-## Important Change with index.php
+## 🔑 Informasi Akun (Login)
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Aplikasi telah dilengkapi dengan 3 (tiga) jenis akun default yang siap digunakan kapan saja untuk mengetes hak akses (jabatan) yang berbeda:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+1. **Akun Admin (Akses Penuh Keseluruhan)**
+   - Username: `admin`
+   - Password: `admin123`
 
-**Please** read the user guide for a better explanation of how CI4 works!
+2. **Akun Staf Gudang (Hanya Bisa Kelola Barang)**
+   - Username: `gudang`
+   - Password: `gudang123`
 
-## Repository Management
+3. **Akun Pengunjung / Guest (Hanya Bisa Melihat)**
+   - Username: `guest`
+   - Password: `guest123`
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+---
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.2 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+### 🛑 Cara Mematikan Aplikasi
+Jika Anda sudah selesai menggunakan aplikasi dan ingin mematikannya:
+1. Buka kembali jendela Terminal/CMD yang dibiarkan terbuka tadi.
+2. Tekan tombol **`Ctrl + C`** secara bersamaan pada keyboard Anda. Server akan otomatis mati.
+3. Anda juga bisa menekan tombol **Stop** pada XAMPP (MySQL) jika sudah selesai sepenuhnya.
