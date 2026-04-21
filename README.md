@@ -4,38 +4,38 @@ Aplikasi Manajemen Toko Berbasis Web (Admin Web Store). Aplikasi ini memungkinka
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi di Windows
+## 🚀 Cara Menjalankan Aplikasi
 
 Aplikasi ini memerlukan **PHP versi 8.1 ke atas**. Ikuti langkah-langkah di bawah ini:
 
 ### Tahap 1: Persiapan Server (XAMPP)
+
 1. Pastikan folder aplikasi berada di: `C:\xampp\htdocs\admin-web-store`.
 2. Buka **XAMPP Control Panel**.
 3. Klik **Start** pada modul **Apache** dan **MySQL**.
 
 ### Tahap 2: Menyiapkan Database
+
 1. Buka browser dan akses: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
-2. Buat database baru dengan nama: **`admin_web_store`**.
-3. Buka **Command Prompt (CMD)**, masuk ke folder aplikasi:
-   ```cmd
-   cd C:\xampp\htdocs\admin-web-store
-   ```
-4. Jalankan perintah ini satu per satu:
-   ```cmd
-   php spark migrate
-   php spark db:seed UserSeeder
-   ```
+2. Import database **`admin_web_store.sql`** ke phpmyadmin.
 
 ### Tahap 3: Memilih Cara Membuka Aplikasi
+
 Pilih salah satu opsi di bawah ini sesuai dengan versi PHP di XAMPP Anda:
 
 #### Opsi A: Jika XAMPP Anda sudah menggunakan PHP 8
+
 Anda bisa langsung mengakses aplikasi melalui Apache:
 👉 **[http://localhost/admin-web-store/public](http://localhost/admin-web-store/public)**
 
 #### Opsi B: Jika XAMPP Anda masih PHP 7 (atau muncul error PHP Version)
+
 Gunakan cara ini untuk menjalankan aplikasi menggunakan versi PHP sistem (Terminal):
-1. Buka **Command Prompt (CMD)** di folder aplikasi.
+
+1. Buka **Command Prompt (CMD)**, masuk ke folder aplikasi:
+   ```cmd
+   cd C:\xampp\htdocs\admin-web-store
+   ```
 2. Ketik perintah berikut:
    ```cmd
    php spark serve --port 8080
@@ -54,5 +54,6 @@ Gunakan cara ini untuk menjalankan aplikasi menggunakan versi PHP sistem (Termin
 ---
 
 ### 🛑 Solusi Masalah
+
 - **Error "php is not recognized"**: Anda perlu menambahkan folder PHP (`C:\xampp\php`) ke dalam **Environment Variables System PATH** di Windows.
 - **Error PHP Version**: Pastikan versi PHP yang aktif di terminal/CMD adalah versi 8.1 atau lebih tinggi (cek dengan perintah `php -v`).
