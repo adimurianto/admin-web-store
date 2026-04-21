@@ -4,52 +4,55 @@ Aplikasi Manajemen Toko Berbasis Web (Admin Web Store). Aplikasi ini memungkinka
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi di Windows (XAMPP PHP 8)
+## 🚀 Cara Menjalankan Aplikasi di Windows
 
-Ikuti langkah-langkah mudah di bawah ini untuk menjalankan aplikasi di komputer Anda:
+Aplikasi ini memerlukan **PHP versi 8.1 ke atas**. Ikuti langkah-langkah di bawah ini:
 
 ### Tahap 1: Persiapan Server (XAMPP)
-1. Pastikan folder aplikasi ini berada di dalam folder htdocs XAMPP Anda (Contoh: `C:\xampp\htdocs\admin-web-store`).
-2. Buka aplikasi **XAMPP Control Panel**.
-3. Klik tombol **Start** pada modul **Apache** dan **MySQL** hingga keduanya berwarna hijau.
+1. Pastikan folder aplikasi berada di: `C:\xampp\htdocs\admin-web-store`.
+2. Buka **XAMPP Control Panel**.
+3. Klik **Start** pada modul **Apache** dan **MySQL**.
 
 ### Tahap 2: Menyiapkan Database
-1. Buka browser (Chrome/Edge) dan akses: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
-2. Di menu sebelah kiri, klik **New** (Baru).
-3. Masukkan nama database: **`admin_web_store`** lalu klik **Create** (Buat).
-4. Klik tab **Import** di bagian atas.
-5. Klik **Choose File** dan cari file database (jika ada file `.sql`) ATAU jika Anda ingin menggunakan fitur otomatis CodeIgniter:
-   - Buka **Command Prompt (CMD)**.
-   - Masuk ke folder aplikasi: `cd C:\xampp\htdocs\admin-web-store`
-   - Ketik perintah: `php spark migrate` lalu tekan Enter.
-   - Ketik perintah: `php spark db:seed UserSeeder` lalu tekan Enter.
+1. Buka browser dan akses: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+2. Buat database baru dengan nama: **`admin_web_store`**.
+3. Buka **Command Prompt (CMD)**, masuk ke folder aplikasi:
+   ```cmd
+   cd C:\xampp\htdocs\admin-web-store
+   ```
+4. Jalankan perintah ini satu per satu:
+   ```cmd
+   php spark migrate
+   php spark db:seed UserSeeder
+   ```
 
-### Tahap 3: Membuka Aplikasi
-Karena Anda menggunakan XAMPP dengan PHP 8, Anda bisa langsung membuka aplikasi melalui browser:
+### Tahap 3: Memilih Cara Membuka Aplikasi
+Pilih salah satu opsi di bawah ini sesuai dengan versi PHP di XAMPP Anda:
 
+#### Opsi A: Jika XAMPP Anda sudah menggunakan PHP 8
+Anda bisa langsung mengakses aplikasi melalui Apache:
 👉 **[http://localhost/admin-web-store/public](http://localhost/admin-web-store/public)**
+
+#### Opsi B: Jika XAMPP Anda masih PHP 7 (atau muncul error PHP Version)
+Gunakan cara ini untuk menjalankan aplikasi menggunakan versi PHP sistem (Terminal):
+1. Buka **Command Prompt (CMD)** di folder aplikasi.
+2. Ketik perintah berikut:
+   ```cmd
+   php spark serve --port 8080
+   ```
+3. Biarkan CMD tetap terbuka, lalu akses melalui browser di:
+   👉 **[http://localhost:8080](http://localhost:8080)**
 
 ---
 
 ## 🔑 Informasi Akun (Login)
 
-Gunakan akun berikut untuk mencoba hak akses yang berbeda:
-
-1. **Akun Admin (Akses Penuh)**
-   - Username: `admin`
-   - Password: `admin123`
-
-2. **Akun Staf Gudang (Kelola Barang)**
-   - Username: `gudang`
-   - Password: `gudang123`
-
-3. **Akun Pengunjung / Guest (Hanya Lihat)**
-   - Username: `guest`
-   - Password: `guest123`
+1. **Admin (Akses Penuh)**: `admin` / `admin123`
+2. **Staf Gudang (Kelola Barang)**: `gudang` / `gudang123`
+3. **Guest (Hanya Lihat)**: `guest` / `guest123`
 
 ---
 
-### 🛑 Catatan Tambahan
-Jika Anda ingin menggunakan perintah terminal (seperti `php spark ...`) namun muncul error "php is not recognized", pastikan Anda sudah menambahkan folder PHP XAMPP (`C:\xampp\php`) ke dalam **Environment Variables System PATH** di Windows Anda.
-
-Jika tidak ingin repot dengan pengaturan PATH, Anda cukup memastikan Apache dan MySQL di XAMPP menyala dan akses aplikasi melalui link di atas.
+### 🛑 Solusi Masalah
+- **Error "php is not recognized"**: Anda perlu menambahkan folder PHP (`C:\xampp\php`) ke dalam **Environment Variables System PATH** di Windows.
+- **Error PHP Version**: Pastikan versi PHP yang aktif di terminal/CMD adalah versi 8.1 atau lebih tinggi (cek dengan perintah `php -v`).
