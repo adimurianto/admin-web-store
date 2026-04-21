@@ -38,4 +38,11 @@ class CategoryModel extends Model
         }
         return $data;
     }
+
+    public function getCategoriesWithParent()
+    {
+        return $this->select('categories.*, parent.nama_kategori as parent_nama')
+                    ->join('categories as parent', 'parent.id = categories.parent_id', 'left')
+                    ->findAll();
+    }
 }

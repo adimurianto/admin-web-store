@@ -16,7 +16,7 @@
                     <tr>
                         <th>Foto</th>
                         <th>Nama Kategori</th>
-                        <th>Parent ID</th>
+                        <th>Parent Kategori</th>
                         <th>Last Edited</th>
                         <?php if(session()->get('jabatan') === 'Admin'): ?>
                         <th>Aksi</th>
@@ -34,7 +34,7 @@
                             <?php endif; ?>
                         </td>
                         <td><?= esc($row['nama_kategori']) ?></td>
-                        <td><?= $row['parent_id'] ? esc($row['parent_id']) : '-' ?></td>
+                        <td><?= $row['parent_nama'] ? esc($row['parent_nama']) : '-' ?></td>
                         <td>
                             <?php if(!empty($row['last_edited'])): ?>
                                 <?= date('d/m/Y H:i:s', strtotime($row['last_edited'])) ?>

@@ -15,8 +15,7 @@ class Categories extends BaseController
 
     public function index()
     {
-        $data['categories'] = $this->categoryModel->findAll();
-        // optionally join with parent categories or users here
+        $data['categories'] = $this->categoryModel->getCategoriesWithParent();
         return view('categories/index', $data);
     }
 
