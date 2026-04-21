@@ -17,7 +17,7 @@ class Dashboard extends BaseController
         $data = [
             'total_items'      => $itemModel->countAllResults(),
             'total_categories' => $categoryModel->countAllResults(),
-            'total_admins'     => $userModel->where('jabatan', 'Admin')->countAllResults(),
+            'total_users'      => $userModel->countAllResults(),
         ];
 
         return view('dashboard/index', $data);

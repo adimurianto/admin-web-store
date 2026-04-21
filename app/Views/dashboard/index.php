@@ -43,11 +43,11 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between px-md-1">
                     <div>
-                        <h3 class="text-white"><?= $total_admins ?></h3>
-                        <p class="mb-0">Admin Users</p>
+                        <h3 class="text-white"><?= $total_users ?></h3>
+                        <p class="mb-0">Total Admin Users</p>
                     </div>
                     <div class="align-self-center">
-                        <i class="bi bi-person-badge fs-1"></i>
+                        <i class="bi bi-people fs-1"></i>
                     </div>
                 </div>
             </div>
