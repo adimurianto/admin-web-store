@@ -41,8 +41,9 @@ class CategoryModel extends Model
 
     public function getCategoriesWithParent()
     {
-        return $this->select('categories.*, parent.nama_kategori as parent_nama')
+        return $this->select('categories.*, parent.nama_kategori as parent_nama, users.nama as editor_nama')
                     ->join('categories as parent', 'parent.id = categories.parent_id', 'left')
+                    ->join('users', 'users.id = categories.edited_by', 'left')
                     ->findAll();
     }
 }

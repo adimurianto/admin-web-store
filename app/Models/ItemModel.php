@@ -42,8 +42,9 @@ class ItemModel extends Model
     // Custom method to fetch items with their category name
     public function getItemsWithCategory()
     {
-        return $this->select('items.*, categories.nama_kategori')
+        return $this->select('items.*, categories.nama_kategori, users.nama as editor_nama')
                     ->join('categories', 'categories.id = items.category_id', 'left')
+                    ->join('users', 'users.id = items.edited_by', 'left')
                     ->findAll();
     }
 }

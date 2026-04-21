@@ -18,6 +18,7 @@
                         <th>Nama Item</th>
                         <th>Kategori</th>
                         <th>Harga</th>
+                        <th>Edited By</th>
                         <th>Last Edited</th>
                         <?php if(in_array(session()->get('jabatan'), ['Admin', 'Gudang'])): ?>
                         <th>Aksi</th>
@@ -40,6 +41,7 @@
                         </td>
                         <td><?= esc($row['nama_kategori'] ?? '-') ?></td>
                         <td>Rp <?= number_format($row['harga'], 0, ',', '.') ?></td>
+                        <td><?= $row['editor_nama'] ? esc($row['editor_nama']) : '-' ?></td>
                         <td>
                             <?php if(!empty($row['last_edited'])): ?>
                                 <?= date('d/m/Y H:i:s', strtotime($row['last_edited'])) ?>
