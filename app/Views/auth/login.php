@@ -46,6 +46,9 @@
                 </form>
             </div>
         </div>
+        <div class="text-center mt-3 text-muted">
+            <small>Developed by Adi Murianto &copy; <?= date('Y') ?></small>
+        </div>
     </div>
 
     <!-- Bootstrap 5 JS -->

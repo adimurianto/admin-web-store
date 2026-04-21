@@ -94,6 +94,11 @@
                 <?php endif; ?>
 
                 <?= $this->renderSection('content') ?>
+
+                <hr class="mt-5">
+                <footer class="text-center text-muted py-3">
+                    <small>Developed by Adi Murianto &copy; <?= date('Y') ?></small>
+                </footer>
             </div>
         </div>
     </div>
